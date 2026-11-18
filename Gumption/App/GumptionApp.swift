@@ -17,6 +17,10 @@ struct GumptionApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .task {
+                    // Tasks removed more than 30 days ago go for good (D7).
+                    try? Persistence.purgeExpired(container.mainContext)
+                }
         }
         .modelContainer(container)
     }

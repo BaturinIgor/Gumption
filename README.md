@@ -6,7 +6,15 @@ Not a planner. A start button.
 
 ## Status
 
-Pre-development. Version 1.0 is being specified. See [`docs/`](docs/).
+Early development. Working in the app so far:
+
+- Quick capture, task list, remove with 5-second undo
+- Task detail: name, energy, estimate, steps (add, tick, reorder, edit)
+- Focus with a ring timer, step by step, "I'm stuck" (smaller step, break, switch), break screen, task complete
+- Your week (things started, focus minutes per day, steps done)
+- Settings, Your data (iCloud status, safety copies, JSON/CSV export, additive import), Recently deleted
+
+Not yet: AI breakdown and buddy, voice capture, widgets and Live Activity, reminders, subscription.
 
 ## Product docs
 
