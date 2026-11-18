@@ -22,3 +22,15 @@ Pre-development. Version 1.0 is being specified. See [`docs/`](docs/).
 - A thin backend only as a proxy to the AI provider (1.0) and for the quiet-room counter (1.1)
 
 Apple platforms only: iPhone first, then iPad, Apple Watch and Mac. No Android, no web.
+
+## Build
+
+Requires Xcode 16+ and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
+
+```sh
+xcodegen generate
+xcodebuild test -project Gumption.xcodeproj -scheme Gumption \
+  -destination 'platform=iOS Simulator,name=iPhone 16' CODE_SIGNING_ALLOWED=NO
+```
+
+The `.xcodeproj` is generated from `project.yml` and is not committed.
