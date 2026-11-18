@@ -22,4 +22,5 @@ Every rule in `docs/data-safety.md` applies to every change. In particular:
 
 - At most two taps from launch to a running focus session.
 - No red, no "overdue", no streaks that reset, no guilt copy.
-- UI copy is English (US).
+- UI copy is written in English (US) and must be localizable: SwiftUI literals, `String(localized:)` for strings built in code, plurals as variations in `Gumption/Resources/Localizable.xcstrings`. No user-facing text in plain `String` literals.
+- Never translate or localize task text the user typed.

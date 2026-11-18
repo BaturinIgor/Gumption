@@ -27,11 +27,11 @@ struct DataView: View {
                         .frame(width: 44, height: 44)
                         .background((iCloudAvailable ? Palette.saved : Palette.praise).opacity(0.15), in: Circle())
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(iCloudAvailable ? "Synced with iCloud" : "Saved on this iPhone only")
+                        Text(iCloudAvailable ? String(localized: "Synced with iCloud") : String(localized: "Saved on this iPhone only"))
                             .font(.system(.headline, design: .rounded, weight: .heavy))
                         Text(iCloudAvailable
-                             ? "\(allTasks.count) tasks. If you reinstall, everything comes back."
-                             : "Turn on iCloud in Settings to keep a copy and get it back after a reinstall.")
+                             ? String(localized: "\(allTasks.count) tasks. If you reinstall, everything comes back.")
+                             : String(localized: "Turn on iCloud in Settings to keep a copy and get it back after a reinstall."))
                             .font(.callout).foregroundStyle(Palette.muted)
                         if !iCloudAvailable, let url = URL(string: UIApplication.openSettingsURLString) {
                             Link("Open Settings", destination: url).font(.callout.weight(.semibold))
@@ -79,7 +79,7 @@ struct DataView: View {
         .navigationTitle("Your data")
         .fileExporter(isPresented: $showExporter, document: exportDocument,
                       contentType: exportType, defaultFilename: "Gumption") { result in
-            if case .success = result { message = "Exported." }
+            if case .success = result { message = String(localized: "Exported.") }
         }
         .fileImporter(isPresented: $showImporter, allowedContentTypes: [.json]) { result in
             importFrom(result)
@@ -101,7 +101,7 @@ struct DataView: View {
             exportType = type
             showExporter = true
         } catch {
-            message = "Couldn't export right now. Nothing was changed."
+            message = String(localized: "Couldn't export right now. Nothing was changed.")
         }
     }
 
@@ -112,9 +112,9 @@ struct DataView: View {
         do {
             let file = try DataTransfer.decode(Data(contentsOf: url))
             let outcome = try DataTransfer.importFile(file, into: context)
-            message = "Added \(outcome.tasksAdded) tasks. \(outcome.tasksSkipped) were already here."
+            message = String(localized: "Added \(outcome.tasksAdded) tasks. \(outcome.tasksSkipped) were already here.")
         } catch {
-            message = "That file couldn't be read. Nothing was changed."
+            message = String(localized: "That file couldn't be read. Nothing was changed.")
         }
     }
 }

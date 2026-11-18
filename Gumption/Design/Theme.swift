@@ -54,11 +54,12 @@ struct PrimaryButtonStyle: ButtonStyle {
 }
 
 struct SectionLabel: View {
-    let text: String
+    let text: LocalizedStringKey
     var color: Color = Palette.muted
 
     var body: some View {
-        Text(text.uppercased())
+        Text(text)
+            .textCase(.uppercase)
             .font(.footnote.weight(.semibold))
             .tracking(0.5)
             .foregroundStyle(color)

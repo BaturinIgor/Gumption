@@ -41,8 +41,7 @@ struct RecentlyDeletedView: View {
     private func detail(_ task: TaskItem) -> String {
         let steps = task.steps?.count ?? 0
         let days = task.deletedAt.map { TaskActions.daysLeft(deletedAt: $0) } ?? 30
-        let stepText = steps == 1 ? "1 step" : "\(steps) steps"
-        let dayText = days == 1 ? "1 day left" : "\(days) days left"
-        return "\(stepText) · \(dayText)"
+        // Plural forms live in Localizable.xcstrings.
+        return String(localized: "\(steps) steps · \(days) days left")
     }
 }

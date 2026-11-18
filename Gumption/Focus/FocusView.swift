@@ -59,7 +59,7 @@ struct FocusView: View {
         guard let next = task.nextStep, let index = steps.firstIndex(where: { $0.id == next.id }) else {
             return task.title
         }
-        return "Step \(index + 1) of \(steps.count) · \(task.title)"
+        return String(localized: "Step \(index + 1) of \(steps.count) · \(task.title)")
     }
 
     private var focusContent: some View {
@@ -85,10 +85,10 @@ struct FocusView: View {
 
             if let session {
                 RingTimer(timer: FocusTimer(startedAt: session.startedAt, plannedSeconds: session.plannedSeconds),
-                          caption: "of \(session.plannedSeconds / 60) min")
+                          caption: String(localized: "of \(session.plannedSeconds / 60) min"))
             }
 
-            Text(praise ?? "I'm right here. Tap Done when you're through.")
+            Text(praise ?? String(localized: "I'm right here. Tap Done when you're through."))
                 .font(.callout)
                 .foregroundStyle(praise == nil ? Palette.focusMuted : Palette.praise)
                 .multilineTextAlignment(.center)
@@ -164,7 +164,7 @@ struct FocusView: View {
             TaskActions.setStepDone(step, done: true, in: context)
         }
         if let next = task.nextStep {
-            praise = "Nice. Next up: \(next.text)"
+            praise = String(localized: "Nice. Next up: \(next.text)")
             startSession()
         } else {
             TaskActions.complete(task, in: context)
@@ -176,7 +176,7 @@ struct FocusView: View {
         showStuck = false
         endSession(FocusOutcome.stuck)
         TaskActions.insertSmallerStep(text, before: task.nextStep, in: task, context: context)
-        praise = "Smaller is smart."
+        praise = String(localized: "Smaller is smart.")
         startSession()
     }
 
@@ -247,7 +247,7 @@ struct BreakView: View {
         VStack(spacing: 20) {
             Text("Break · your step is paused and saved")
                 .font(.subheadline).foregroundStyle(Palette.focusMuted)
-            RingTimer(timer: timer, ring: Palette.breakRing, caption: "of \(breakMinutes) min")
+            RingTimer(timer: timer, ring: Palette.breakRing, caption: String(localized: "of \(breakMinutes) min"))
                 .padding(.top, 12)
             Text("Rest is part of the plan.")
                 .font(.system(.title2, design: .rounded, weight: .heavy))
@@ -256,7 +256,7 @@ struct BreakView: View {
             VStack(alignment: .leading, spacing: 8) {
                 SectionLabel(text: "Ideas, if you want one", color: Palette.focusMuted)
                 HStack {
-                    ForEach(["Drink some water", "Stretch", "Look outside"], id: \.self) { idea in
+                    ForEach([String(localized: "Drink some water"), String(localized: "Stretch"), String(localized: "Look outside")], id: \.self) { idea in
                         Text(idea)
                             .font(.footnote)
                             .padding(.horizontal, 10).padding(.vertical, 8)
@@ -308,7 +308,7 @@ struct TaskCompleteView: View {
 
             HStack(spacing: 8) {
                 stat("\(summary.stepsDone)", "steps")
-                stat("\(summary.focusMinutes)m", "focused")
+                stat(WeekStats.formatDuration(summary.focusSeconds), "focused")
             }
 
             Spacer()
@@ -322,7 +322,7 @@ struct TaskCompleteView: View {
         .foregroundStyle(Palette.ink)
     }
 
-    private func stat(_ value: String, _ label: String) -> some View {
+    private func stat(_ value: String, _ label: LocalizedStringKey) -> some View {
         VStack(spacing: 2) {
             Text(value).font(.system(.title2, design: .rounded, weight: .heavy))
             Text(label).font(.footnote).foregroundStyle(Palette.muted)

@@ -9,7 +9,7 @@ struct TaskDetailView: View {
     @State private var newStep = ""
     @State private var focusing = false
 
-    private let energyLabels = ["Low", "Some", "Lots"]
+    private let energyLabels = [String(localized: "Low"), String(localized: "Some"), String(localized: "Lots")]
 
     var body: some View {
         List {
@@ -30,7 +30,7 @@ struct TaskDetailView: View {
                     HStack {
                         Text("About how long?")
                         Spacer()
-                        Text(task.estimateMinutes.map { "~\($0) min" } ?? "Not sure")
+                        Text(task.estimateMinutes.map { String(localized: "~\($0) min") } ?? String(localized: "Not sure"))
                             .foregroundStyle(Palette.accent)
                     }
                 }
@@ -84,8 +84,8 @@ struct TaskDetailView: View {
 
     private var startLabel: String {
         guard let next = task.nextStep,
-              let index = task.orderedSteps.firstIndex(where: { $0.id == next.id }) else { return "Start" }
-        return "Start step \(index + 1)"
+              let index = task.orderedSteps.firstIndex(where: { $0.id == next.id }) else { return String(localized: "Start") }
+        return String(localized: "Start step \(index + 1)")
     }
 
     private var estimateBinding: Binding<Int> {

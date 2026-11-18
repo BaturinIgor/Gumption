@@ -1,6 +1,7 @@
 name: Gumption
 options:
   bundleIdPrefix: app.gumption
+  developmentLanguage: en
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
@@ -10,6 +11,9 @@ settings:
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
     DEVELOPMENT_TEAM: ""
+    # All UI copy goes through Localizable.xcstrings; Xcode extracts new strings on build.
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
 targets:
   Gumption:
     type: application

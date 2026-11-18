@@ -46,8 +46,9 @@ final class StatsTests: XCTestCase {
     }
 
     func testDurationFormatting() {
-        XCTAssertEqual(WeekStats.formatDuration(45 * 60), "45m")
-        XCTAssertEqual(WeekStats.formatDuration(120 * 60), "2h")
-        XCTAssertEqual(WeekStats.formatDuration(160 * 60), "2h 40m")
+        let en = Locale(identifier: "en_US")
+        XCTAssertEqual(WeekStats.formatDuration(45 * 60, locale: en), "45m")
+        XCTAssertEqual(WeekStats.formatDuration(120 * 60, locale: en), "2h")
+        XCTAssertEqual(WeekStats.formatDuration(160 * 60, locale: en), "2h 40m")
     }
 }

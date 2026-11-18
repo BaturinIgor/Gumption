@@ -56,13 +56,13 @@ struct WeekView: View {
 
     private func headline(_ stats: WeekStats) -> String {
         switch stats.tasksStarted {
-        case 0: return "A quiet week. Whenever you're ready, one tiny step is enough."
-        case 1: return "You started 1 thing this week. Starting is the skill."
-        default: return "You started \(stats.tasksStarted) things this week. Starting is the skill, and you're practicing it."
+        case 0: return String(localized: "A quiet week. Whenever you're ready, one tiny step is enough.")
+        case 1: return String(localized: "You started 1 thing this week. Starting is the skill.")
+        default: return String(localized: "You started \(stats.tasksStarted) things this week. Starting is the skill, and you're practicing it.")
         }
     }
 
-    private func tile(_ value: String, _ label: String) -> some View {
+    private func tile(_ value: String, _ label: LocalizedStringKey) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(value).font(.system(.title2, design: .rounded, weight: .heavy))
             Text(label).font(.footnote).foregroundStyle(Palette.muted)

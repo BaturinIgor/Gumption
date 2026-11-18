@@ -36,6 +36,7 @@ Why: people with ADHD drop task apps because setup burns the energy they don't h
 | 17 | Your week | Things started, focus minutes per day, steps done; no streaks, computed on device |
 | 18 | Your data | iCloud status, safety copies, JSON/CSV export, additive import, Recently deleted (30 days) |
 | 19 | Widgets and controls | Home Screen "next step" and "add"; Lock Screen and Control Center timer, start, voice capture |
+| 20 | 20 languages at launch | English, German, French, Spanish, Italian, Portuguese (Brazil), Dutch, Swedish, Danish, Norwegian, Finnish, Polish, Czech, Turkish, Japanese, Korean, Chinese (Simplified and Traditional), Russian, Ukrainian. Language follows iOS Settings → Gumption → Language. Every string in the String Catalog, plurals correct, reviewed by a native speaker; AI buddy and breakdown answer in the app's language; App Store page in every language |
 
 Every screen is drawn in the [mockups](https://claude.ai/artifact/2xrhFe32SYae7f8LWhjRFK) (23 screens).
 

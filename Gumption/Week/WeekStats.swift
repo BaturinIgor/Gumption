@@ -43,9 +43,16 @@ struct WeekStats: Equatable {
         return WeekStats(days: days, tasksStarted: started, totalFocusSeconds: total, stepsDone: steps)
     }
 
-    static func formatDuration(_ seconds: TimeInterval) -> String {
+    /// "45m", "2h 40m" in English; other languages get their own abbreviations.
+    static func formatDuration(_ seconds: TimeInterval, locale: Locale = .current) -> String {
         let minutes = Int((seconds / 60).rounded())
-        if minutes < 60 { return "\(minutes)m" }
-        return minutes % 60 == 0 ? "\(minutes / 60)h" : "\(minutes / 60)h \(minutes % 60)m"
+        var calendar = Calendar.current
+        calendar.locale = locale
+        let formatter = DateComponentsFormatter()
+        formatter.calendar = calendar
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = minutes < 60 ? [.minute] : [.hour, .minute]
+        formatter.zeroFormattingBehavior = .dropAll
+        return formatter.string(from: TimeInterval(minutes * 60)) ?? "\(minutes)"
     }
 }
