@@ -1,0 +1,24 @@
+# Gumption
+
+An iOS app that helps people with ADHD **start** a task: one tap to get the first tiny step, a buddy beside you while you do it, and a timer you can see from the lock screen.
+
+Not a planner. A start button.
+
+## Status
+
+Pre-development. Version 1.0 is being specified. See [`docs/`](docs/).
+
+## Product docs
+
+- [Requirements (MVP 1.0)](docs/requirements.md)
+- [Version plan](docs/roadmap.md)
+- [Data safety requirements](docs/data-safety.md)
+
+## Stack
+
+- Swift, SwiftUI, iOS 17+
+- SwiftData for local storage, synced to the user's private iCloud database (CloudKit)
+- No account, no own sync server
+- A thin backend only as a proxy to the AI provider (1.0) and for the quiet-room counter (1.1)
+
+Apple platforms only: iPhone first, then iPad, Apple Watch and Mac. No Android, no web.
