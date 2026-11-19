@@ -1,0 +1,63 @@
+name: Gumption
+options:
+  bundleIdPrefix: app.gumption
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: ""
+    # All UI copy goes through Localizable.xcstrings; Xcode extracts new strings on build.
+    SWIFT_EMIT_LOC_STRINGS: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+targets:
+  Gumption:
+    type: application
+    platform: iOS
+    sources:
+      - Gumption
+    entitlements:
+      path: Gumption/Resources/Gumption.entitlements
+      properties:
+        com.apple.developer.icloud-container-identifiers:
+          - iCloud.app.gumption.Gumption
+        com.apple.developer.icloud-services:
+          - CloudKit
+        aps-environment: development
+    info:
+      path: Gumption/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Gumption
+        UILaunchScreen: {}
+        UIBackgroundModes:
+          - remote-notification
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.gumption.Gumption
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+  GumptionTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - GumptionTests
+    dependencies:
+      - target: Gumption
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Gumption:
+    build:
+      targets:
+        Gumption: all
+        GumptionTests: [test]
+    test:
+      targets:
+        - GumptionTests

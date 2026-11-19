@@ -4,14 +4,16 @@ Version 1.0 does one thing: helps start a task in two taps and never loses user 
 
 | Version | Goal | Build time | Move on when |
 | --- | --- | --- | --- |
-| 1.0 | Start a task, never lose data, charge fairly | 10–12 weeks | median time to start under 10 s, week-4 retention over 20%, 0 data-loss incidents |
+| 1.0 | Start a task, never lose data, charge fairly, in 20 languages | 12–15 weeks | median time to start under 10 s, week-4 retention over 20%, 0 data-loss incidents |
 | 1.1 | Live people nearby, buddy voice | +4–6 weeks | retention grows for people who join the room |
 | 1.2 | Habits and the watch: routines, templates, Apple Watch, Siri | +4–6 weeks | trial to paid over 8% |
-| 2.0 | The whole Apple ecosystem: Mac, shared lists, more languages | +6–8 weeks | reviews ask for Mac and localisation |
+| 2.0 | The whole Apple ecosystem: Mac, shared lists | +6–8 weeks | reviews ask for Mac |
 
 ## 1.0: must have
 
 See [requirements.md](requirements.md) and [data-safety.md](data-safety.md).
+
+Localisation is part of 1.0 (decided 2026-11-18): 20 languages, see requirement 20. Strings are translated after the beta copy freeze, so copy changes during the beta touch English only.
 
 ## 1.1: people nearby
 
@@ -32,7 +34,6 @@ See [requirements.md](requirements.md) and [data-safety.md](data-safety.md).
 
 - Mac app from the same SwiftUI code base: timer in the menu bar, quick capture by hotkey.
 - Shared lists through CloudKit sharing: household tasks with a partner, a buddy friend via a link.
-- Localisation: German, French, Spanish (EU).
 - No Android and no web: Gumption is Apple-only, built in Swift.
 
 ## Later, if demand is confirmed
