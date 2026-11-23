@@ -1,0 +1,132 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "%lld steps · %lld days left": {
+      "localizations": {
+        "en": {
+          "substitutions": {
+            "steps": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg step"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg steps"
+                    }
+                  }
+                }
+              }
+            },
+            "days": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg day left"
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg days left"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@steps@ · %#@days@"
+          }
+        }
+      }
+    },
+    "%lld tasks. If you reinstall, everything comes back.": {
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld task. If you reinstall, everything comes back."
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld tasks. If you reinstall, everything comes back."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Added %lld tasks. %lld were already here.": {
+      "localizations": {
+        "en": {
+          "substitutions": {
+            "added": {
+              "argNum": 1,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "Added %arg task."
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "Added %arg tasks."
+                    }
+                  }
+                }
+              }
+            },
+            "skipped": {
+              "argNum": 2,
+              "formatSpecifier": "lld",
+              "variations": {
+                "plural": {
+                  "one": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg was already here."
+                    }
+                  },
+                  "other": {
+                    "stringUnit": {
+                      "state": "translated",
+                      "value": "%arg were already here."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "stringUnit": {
+            "state": "translated",
+            "value": "%#@added@ %#@skipped@"
+          }
+        }
+      }
+    }
+  }
+}

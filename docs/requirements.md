@@ -29,6 +29,16 @@ Why: people with ADHD drop task apps because setup burns the energy they don't h
 | 10 | Free tier and honest subscription | 7-day trial, reminder 2 days before charge, lifetime option |
 | 11 | Data safety | Every requirement in [data-safety.md](data-safety.md) passes |
 | 12 | Analytics and crash reporting | Funnel events without task text; 99.5% crash-free sessions |
+| 13 | First launch | No sign-up; first task and first session right away; notification permission asked only after the first session |
+| 14 | Task detail | Edit name, energy, estimate and steps (add, tick, reorder); every change saved at once |
+| 15 | Break and task complete | Break timer from a timestamp, step kept; completion screen with steps and focus minutes |
+| 16 | Welcome back after 7+ days | Warm greeting, old tasks moved to "Later", one 5-minute task offered |
+| 17 | Your week | Things started, focus minutes per day, steps done; no streaks, computed on device |
+| 18 | Your data | iCloud status, safety copies, JSON/CSV export, additive import, Recently deleted (30 days) |
+| 19 | Widgets and controls | Home Screen "next step" and "add"; Lock Screen and Control Center timer, start, voice capture |
+| 20 | 20 languages at launch | English, German, French, Spanish, Italian, Portuguese (Brazil), Dutch, Swedish, Danish, Norwegian, Finnish, Polish, Czech, Turkish, Japanese, Korean, Chinese (Simplified and Traditional), Russian, Ukrainian. Language follows iOS Settings → Gumption → Language. Every string in the String Catalog, plurals correct, reviewed by a native speaker; AI buddy and breakdown answer in the app's language; App Store page in every language |
+
+Every screen is drawn in the [mockups](https://claude.ai/artifact/2xrhFe32SYae7f8LWhjRFK) (23 screens).
 
 Out of scope for 1.0: calendar, projects, video, chat between people, leaderboards.
 
